@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-funnel-analyst-default",
+  "version": "1.0.0",
+  "agent": "funnel-analyst",
+  "created": "2026-05-20T18:05:01.210432",
+  "description": "Default health-check workflow for Funnel Analyst",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "Funnel Analyst is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
